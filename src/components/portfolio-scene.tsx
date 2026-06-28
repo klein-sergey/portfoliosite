@@ -366,7 +366,16 @@ export function PortfolioScene() {
                   >
                     <div className={styles.activeSilhouette}>
                       <div className={styles.activeTape}>
-                        <div className={styles.caseBody} aria-hidden="true" />
+                        <div className={styles.caseBody} aria-hidden="true">
+                          <Image
+                            className={styles.caseTexture}
+                            src="/textures/vhs.png"
+                            alt=""
+                            fill
+                            priority
+                            sizes="(max-width: 640px) 48vw, 14rem"
+                          />
+                        </div>
                         <div className={styles.posterCard}>
                           <Image
                             className={styles.posterImage}

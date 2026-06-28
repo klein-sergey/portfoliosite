@@ -239,22 +239,17 @@
   width: 71%;
   height: 87%;
   border-radius: 0.16rem;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 16%, rgba(0, 0, 0, 0.4) 95%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%),
-    #191919;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 24px 40px rgba(0, 0, 0, 0.35),
     inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-.caseBody::after {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  opacity: 0.4;
+.caseTexture {
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 
 .posterCard {
