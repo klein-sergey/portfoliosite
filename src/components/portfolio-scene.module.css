@@ -241,6 +241,8 @@
   border-radius: 0.16rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  transform: rotate(15deg);
+  transform-origin: center center;
   box-shadow:
     0 24px 40px rgba(0, 0, 0, 0.35),
     inset 0 0 0 1px rgba(255, 255, 255, 0.03);
