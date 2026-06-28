@@ -71,6 +71,28 @@ function getSpineStyle(index: number) {
   };
 }
 
+function SpineFace({ film, index }: { film: Film; index: number }) {
+  if (film.spineSrc) {
+    return (
+      <div className={styles.spineOnly}>
+        <Image
+          className={styles.spineImage}
+          src={film.spineSrc}
+          alt={`Корешок ${film.title}`}
+          fill
+          sizes="(max-width: 640px) 2.15rem, 2.8rem"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.spineOnly} style={getSpineStyle(index)}>
+      <span className={styles.spineLabel}>{film.spineLabel}</span>
+    </div>
+  );
+}
+
 function changeIndex(current: number, delta: number) {
   return normalizeIndex(current + delta, films.length);
 }
@@ -350,9 +372,7 @@ export function PortfolioScene() {
                         });
                       }}
                     >
-                      <div className={styles.spineOnly}>
-                        <span className={styles.spineLabel}>{film.spineLabel}</span>
-                      </div>
+                      <SpineFace film={film} index={index} />
                     </button>
                   ))}
 
@@ -409,9 +429,7 @@ export function PortfolioScene() {
                         });
                       }}
                     >
-                      <div className={styles.spineOnly}>
-                        <span className={styles.spineLabel}>{film.spineLabel}</span>
-                      </div>
+                      <SpineFace film={film} index={index} />
                     </button>
                   ))}
                 </div>

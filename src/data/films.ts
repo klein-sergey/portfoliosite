@@ -7,15 +7,16 @@ export const contactLinks = {
 
 export const films: Film[] = [
   {
-    id: "ash-coast",
-    title: "Ash Coast",
-    productionLine: "Lumen Doc / Vimeo Staff Pick",
-    year: "2024",
-    posterSrc: "/posters/ash-coast.svg",
-    spineLabel: "ASH COAST",
-    filmUrl: "https://vimeo.com/",
+    id: "mama-my-cska",
+    title: "МАМА, МЫ ЦСКА!",
+    productionLine: "Okko x ЦСКА",
+    year: "",
+    posterSrc: "/posters/cska_v2.png",
+    spineLabel: "МАМА, МЫ ЦСКА!",
+    spineSrc: "/spines/cska_koreshok.png",
+    filmUrl: "https://okko.tv/",
     kinopoiskUrl: "https://www.kinopoisk.ru/",
-    vimeoUrl: "https://vimeo.com/",
+    vimeoUrl: "https://okko.tv/",
   },
   {
     id: "white-noise-river",

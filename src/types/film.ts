@@ -5,6 +5,7 @@ export type Film = {
   year: string;
   posterSrc: string;
   spineLabel: string;
+  spineSrc?: string;
   filmUrl: string;
   kinopoiskUrl?: string;
   vimeoUrl?: string;
