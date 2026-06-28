@@ -1,0 +1,414 @@
+.page {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at top, rgba(174, 131, 94, 0.08), transparent 22%),
+    radial-gradient(circle at bottom, rgba(255, 255, 255, 0.03), transparent 28%),
+    var(--bg-page);
+  color: var(--text-primary);
+}
+
+.stage {
+  min-height: 100dvh;
+  padding: 2rem;
+}
+
+.frame {
+  position: relative;
+  min-height: calc(100dvh - 4rem);
+  padding: 1.3rem 1.5rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 24%),
+    var(--bg-panel);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 36px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: 1rem;
+  position: relative;
+  z-index: 5;
+  padding: 0.7rem 0.15rem 0;
+}
+
+.navGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navGroup[data-align="right"] {
+  justify-content: flex-end;
+}
+
+.navLink,
+.navLinkDisabled {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition:
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--text-accent);
+}
+
+.navLinkDisabled {
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.brand {
+  justify-self: center;
+  text-align: center;
+}
+
+.brandName {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #f6ece0;
+}
+
+.shelfWrap {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100dvh - 8.8rem);
+  margin-top: 0.15rem;
+}
+
+.shelfViewport {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+  outline: none;
+}
+
+.shelfViewport:focus-visible {
+  box-shadow: inset 0 0 0 1px rgba(220, 162, 108, 0.28);
+}
+
+.shelfScale {
+  position: absolute;
+  left: 50%;
+  bottom: var(--scene-bottom);
+  transform-origin: center bottom;
+}
+
+.shelfScene {
+  position: relative;
+  width: var(--scene-width);
+  height: var(--scene-height);
+}
+
+.spineButton,
+.tapeButton {
+  position: absolute;
+  bottom: 0;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.spineButton:focus-visible,
+.tapeButton:focus-visible {
+  outline: 2px solid rgba(220, 162, 108, 0.68);
+  outline-offset: 10px;
+}
+
+.spineButton {
+  width: var(--spine-width);
+  height: var(--spine-height);
+}
+
+.leftSpine {
+  left: calc(
+    50% - (var(--silhouette-width) / 2) - var(--spine-gap) - var(--spine-width) -
+      (var(--slot-index) * (var(--spine-width) + var(--spine-gap)))
+  );
+}
+
+.rightSpine {
+  left: calc(
+    50% + (var(--silhouette-width) / 2) + var(--spine-gap) +
+      (var(--slot-index) * (var(--spine-width) + var(--spine-gap)))
+  );
+}
+
+.activeButton {
+  left: 50%;
+  width: var(--silhouette-width);
+  height: var(--scene-height);
+  transform: translateX(-50%);
+}
+
+.activeSilhouette {
+  position: relative;
+  width: var(--silhouette-width);
+  height: var(--scene-height);
+  --visual-center-offset: 2.35rem;
+}
+
+.spineOnly {
+  position: relative;
+  width: var(--spine-width);
+  height: var(--spine-height);
+  border-radius: 0.12rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 14%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.09), transparent 30%, rgba(0, 0, 0, 0.35) 85%),
+    var(--spine-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 14px 20px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.spineOnly::before,
+.spineOnly::after {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  right: 0.3rem;
+  height: 0.12rem;
+  background: rgba(255, 248, 237, 0.35);
+}
+
+.spineOnly::before {
+  top: 0.7rem;
+}
+
+.spineOnly::after {
+  bottom: 0.8rem;
+}
+
+.spineLabel {
+  position: absolute;
+  inset: 0.75rem 0.22rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 245, 232, 0.95);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.activeTape {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: var(--active-width);
+  height: var(--active-height);
+  transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg);
+  transform-origin: center bottom;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.activeTape:hover {
+  transform:
+    translateX(calc(-50% + var(--visual-center-offset)))
+    rotate(-7deg)
+    translateY(-0.35rem);
+}
+
+.caseBody {
+  position: absolute;
+  top: 1.1rem;
+  left: 2rem;
+  width: 71%;
+  height: 87%;
+  border-radius: 0.16rem;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 16%, rgba(0, 0, 0, 0.4) 95%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%),
+    #191919;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    0 24px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.caseBody::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  opacity: 0.4;
+}
+
+.posterCard {
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+  width: 72%;
+  height: 88%;
+  overflow: hidden;
+  border-radius: 0.12rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 28px 36px rgba(0, 0, 0, 0.44),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  transform:
+    translateX(-0.95rem)
+    translateY(0.05rem)
+    rotate(-5.5deg);
+  background: #110f12;
+}
+
+.posterImage {
+  object-fit: cover;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  padding-bottom: 2.2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.metaBlock {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.9vw, 3rem);
+  font-weight: 500;
+  line-height: 0.92;
+  color: #fbf3e7;
+}
+
+.production {
+  margin-top: 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.year {
+  margin-top: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 243, 229, 0.74);
+}
+
+@media (max-width: 900px) {
+  .stage {
+    padding: 1rem;
+  }
+
+  .frame {
+    min-height: calc(100dvh - 2rem);
+    padding: 1rem 1rem 1.25rem;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5rem;
+  }
+
+  .navGroup,
+  .navGroup[data-align="right"] {
+    justify-content: center;
+  }
+
+  .shelfWrap {
+    min-height: calc(100dvh - 10rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .stage {
+    padding: 0;
+  }
+
+  .frame {
+    min-height: 100dvh;
+    padding: 1rem 0.9rem 1.3rem;
+    border: 0;
+  }
+
+  .brandName,
+  .navLink,
+  .navLinkDisabled {
+    font-size: 0.66rem;
+  }
+
+  .shelfWrap {
+    min-height: calc(100dvh - 10.5rem);
+  }
+
+  .caseBody {
+    left: 1.8rem;
+  }
+
+  .activeSilhouette {
+    --visual-center-offset: 1.8rem;
+  }
+
+  .posterCard {
+    width: 74%;
+    transform:
+      translateX(-0.62rem)
+      translateY(0.12rem)
+      rotate(-4deg);
+  }
+
+  .footerRow {
+    padding-top: 1rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .production {
+    font-size: 0.68rem;
+  }
+
+  .year {
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activeTape,
+  .navLink,
+  .navLinkDisabled {
+    transition: none;
+  }
+
+  .activeTape:hover {
+    transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg);
+  }
+}

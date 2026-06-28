@@ -1,0 +1,16 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#081018"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#F0F7FF" stroke-opacity="0.18" stroke-width="4"/>
+  <rect x="92" y="100" width="616" height="486" fill="url(#paint0_linear)"/>
+  <path d="M92 444L242 262L374 416L500 316L708 516V586H92V444Z" fill="#D7E7F4"/>
+  <path d="M92 546L242 452L370 500L524 428L708 558V586H92V546Z" fill="#88A6BF"/>
+  <text x="92" y="760" fill="#F0F7FF" font-family="Georgia, serif" font-size="102">FROZEN</text>
+  <text x="92" y="858" fill="#F0F7FF" font-family="Georgia, serif" font-size="112">MILE</text>
+  <text x="96" y="950" fill="#AAC0D6" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">NORTH UNIT / 2021</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="100" x2="400" y2="586" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDF6FF"/>
+      <stop offset="1" stop-color="#6A8AA6"/>
+    </linearGradient>
+  </defs>
+</svg>

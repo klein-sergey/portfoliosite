@@ -1,0 +1,10 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#0F1317"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#F0ECE3" stroke-opacity="0.18" stroke-width="4"/>
+  <rect x="88" y="96" width="624" height="540" fill="#171E25"/>
+  <path d="M130 558L294 250L400 430L512 224L670 558H130Z" fill="#91ABC4"/>
+  <path d="M186 558L298 352L400 470L490 334L610 558H186Z" fill="#DCE8F3"/>
+  <text x="90" y="782" fill="#F1ECE4" font-family="Georgia, serif" font-size="98">GLASS</text>
+  <text x="90" y="878" fill="#F1ECE4" font-family="Georgia, serif" font-size="116">DISTRICT</text>
+  <text x="94" y="972" fill="#A7B7C7" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">RIOT FRAME / 2019</text>
+</svg>

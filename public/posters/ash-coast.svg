@@ -1,0 +1,18 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#180D10"/>
+  <rect x="38" y="38" width="724" height="1124" stroke="#F6E6D0" stroke-opacity="0.18" stroke-width="4"/>
+  <rect x="96" y="82" width="608" height="402" fill="url(#paint0_linear)"/>
+  <path d="M111 452C225 360 326 342 443 309C532 284 612 234 689 125V620H111V452Z" fill="#AF3A26"/>
+  <path d="M111 512C206 455 291 431 390 401C489 372 585 309 689 175V664H111V512Z" fill="#F18F4C"/>
+  <circle cx="580" cy="210" r="92" fill="#F5C26B" fill-opacity="0.86"/>
+  <text x="94" y="736" fill="#F4E5D2" font-family="Georgia, serif" font-size="40" letter-spacing="6">SERGEY KLEIN</text>
+  <text x="94" y="824" fill="#F4E5D2" font-family="Georgia, serif" font-size="112" letter-spacing="2">ASH</text>
+  <text x="94" y="922" fill="#F4E5D2" font-family="Georgia, serif" font-size="112" letter-spacing="2">COAST</text>
+  <text x="94" y="1010" fill="#D89A68" font-family="Arial, sans-serif" font-size="36" letter-spacing="8">LUMEN DOC / 2024</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="82" x2="400" y2="484" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3C4E80"/>
+      <stop offset="1" stop-color="#11161F"/>
+    </linearGradient>
+  </defs>
+</svg>

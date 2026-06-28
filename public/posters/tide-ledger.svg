@@ -1,0 +1,16 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#0A1119"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#EDF5FF" stroke-opacity="0.16" stroke-width="4"/>
+  <rect x="88" y="92" width="624" height="580" fill="url(#paint0_linear)"/>
+  <path d="M88 516C168 474 274 466 358 504C454 548 560 546 712 436V672H88V516Z" fill="#81AED2"/>
+  <path d="M88 570C188 538 278 538 360 570C470 614 572 608 712 540V672H88V570Z" fill="#244462"/>
+  <text x="92" y="814" fill="#EFF5FD" font-family="Georgia, serif" font-size="96">TIDE</text>
+  <text x="92" y="908" fill="#EFF5FD" font-family="Georgia, serif" font-size="116">LEDGER</text>
+  <text x="96" y="1000" fill="#95B9DA" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">CURRENT UNIT / 2016</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="92" x2="400" y2="672" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDEBFA"/>
+      <stop offset="1" stop-color="#1A2631"/>
+    </linearGradient>
+  </defs>
+</svg>

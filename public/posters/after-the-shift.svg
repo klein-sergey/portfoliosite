@@ -1,0 +1,17 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#17100D"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#F5E8D7" stroke-opacity="0.16" stroke-width="4"/>
+  <rect x="100" y="96" width="600" height="720" fill="#B44C22"/>
+  <path d="M100 666H700V814H100V666Z" fill="#241716"/>
+  <path d="M132 602H668V658H132V602Z" fill="#F2D09C"/>
+  <path d="M170 226H630V540H170V226Z" fill="url(#paint0_linear)"/>
+  <text x="102" y="904" fill="#F8EFDF" font-family="Georgia, serif" font-size="90">AFTER THE</text>
+  <text x="102" y="1000" fill="#F8EFDF" font-family="Georgia, serif" font-size="116">SHIFT</text>
+  <text x="106" y="1084" fill="#E5B46F" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">STUDIO 42 / 2022</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="226" x2="400" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202A31"/>
+      <stop offset="1" stop-color="#0E1317"/>
+    </linearGradient>
+  </defs>
+</svg>

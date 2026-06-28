@@ -1,0 +1,16 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#120C0B"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#F4E5D3" stroke-opacity="0.18" stroke-width="4"/>
+  <rect x="88" y="96" width="624" height="522" fill="url(#paint0_linear)"/>
+  <path d="M88 490L250 372L364 446L516 294L712 476V618H88V490Z" fill="#E79A63"/>
+  <path d="M88 548L230 504L370 536L496 466L712 556V618H88V548Z" fill="#873226"/>
+  <text x="90" y="776" fill="#F4E7D9" font-family="Georgia, serif" font-size="106">RED</text>
+  <text x="90" y="872" fill="#F4E7D9" font-family="Georgia, serif" font-size="116">QUARRY</text>
+  <text x="94" y="964" fill="#D28E5D" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">ATLAS DOC / 2018</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="96" x2="400" y2="618" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D1613"/>
+      <stop offset="1" stop-color="#0E1114"/>
+    </linearGradient>
+  </defs>
+</svg>

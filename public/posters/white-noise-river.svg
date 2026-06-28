@@ -1,0 +1,16 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#0C1013"/>
+  <rect x="40" y="40" width="720" height="1120" stroke="#EEF1F5" stroke-opacity="0.16" stroke-width="4"/>
+  <rect x="84" y="92" width="632" height="530" fill="url(#paint0_linear)"/>
+  <path d="M84 430L188 318L280 392L377 272L503 432L604 338L716 454V622H84V430Z" fill="#B6C8DD"/>
+  <path d="M84 504L220 440L333 486L446 406L560 468L716 430V622H84V504Z" fill="#607A92"/>
+  <text x="88" y="742" fill="#F3F4F7" font-family="Georgia, serif" font-size="82">WHITE NOISE</text>
+  <text x="88" y="832" fill="#F3F4F7" font-family="Georgia, serif" font-size="112">RIVER</text>
+  <text x="92" y="924" fill="#A9B7C7" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">SEVER FILM / 2023</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="92" x2="400" y2="622" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F9FF"/>
+      <stop offset="1" stop-color="#849DB5"/>
+    </linearGradient>
+  </defs>
+</svg>
