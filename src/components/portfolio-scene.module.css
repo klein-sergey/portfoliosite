@@ -163,7 +163,7 @@
   position: relative;
   width: var(--silhouette-width);
   height: var(--scene-height);
-  --visual-center-offset: 2.35rem;
+  --visual-center-offset: 3.35rem;
 }
 
 .spineOnly {
@@ -218,8 +218,8 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--active-width);
-  height: var(--active-height);
+  width: calc(var(--active-width) * 1.2);
+  height: calc(var(--active-height) * 1.2);
   transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg);
   transform-origin: center bottom;
   transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -372,7 +372,7 @@
   }
 
   .activeSilhouette {
-    --visual-center-offset: 1.8rem;
+    --visual-center-offset: 2.55rem;
   }
 
   .posterCard {
