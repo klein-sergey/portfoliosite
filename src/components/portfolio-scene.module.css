@@ -227,6 +227,7 @@
   transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg);
   transform-origin: center bottom;
   transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
 }
 
 .activeTape:hover {
@@ -234,6 +235,14 @@
     translateX(calc(-50% + var(--visual-center-offset)))
     rotate(-7deg)
     translateY(-0.35rem);
+}
+
+.activeTapeFromLeft {
+  animation: tape-enter-left 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.activeTapeFromRight {
+  animation: tape-enter-right 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
 }
 
 .caseBody {
@@ -360,6 +369,38 @@
   color: rgba(255, 243, 229, 0.74);
 }
 
+@keyframes tape-enter-left {
+  from {
+    opacity: 0.72;
+    transform:
+      translateX(calc(-50% + var(--visual-center-offset) - 2.2rem))
+      translateY(0.18rem)
+      rotate(-24deg)
+      scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg) scale(1);
+  }
+}
+
+@keyframes tape-enter-right {
+  from {
+    opacity: 0.72;
+    transform:
+      translateX(calc(-50% + var(--visual-center-offset) + 2.2rem))
+      translateY(0.18rem)
+      rotate(9deg)
+      scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg) scale(1);
+  }
+}
+
 @media (max-width: 900px) {
   .stage {
     padding: 1rem;
@@ -422,6 +463,14 @@
     --visual-center-offset: 2.55rem;
   }
 
+  .activeTapeFromLeft {
+    animation: tape-enter-left-mobile 340ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+
+  .activeTapeFromRight {
+    animation: tape-enter-right-mobile 340ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+
   .posterCard {
     width: 74%;
     transform:
@@ -458,6 +507,38 @@
   }
 }
 
+@keyframes tape-enter-left-mobile {
+  from {
+    opacity: 0.76;
+    transform:
+      translateX(calc(-50% + var(--visual-center-offset) - 1.25rem))
+      translateY(0.12rem)
+      rotate(-18deg)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg) scale(1);
+  }
+}
+
+@keyframes tape-enter-right-mobile {
+  from {
+    opacity: 0.76;
+    transform:
+      translateX(calc(-50% + var(--visual-center-offset) + 1.25rem))
+      translateY(0.12rem)
+      rotate(4deg)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spineButton,
   .activeTape,
@@ -465,6 +546,11 @@
   .navLinkDisabled,
   .titleArrow {
     transition: none;
+  }
+
+  .activeTapeFromLeft,
+  .activeTapeFromRight {
+    animation: none;
   }
 
   .spineButton:hover {

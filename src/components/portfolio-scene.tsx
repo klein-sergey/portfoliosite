@@ -5,6 +5,7 @@ import {
   startTransition,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -189,10 +190,13 @@ export function PortfolioScene() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [shelfScale, setShelfScale] = useState(1);
+  const [transitionDirection, setTransitionDirection] = useState<-1 | 0 | 1>(0);
+  const [transitionKey, setTransitionKey] = useState(0);
   const wheelLockRef = useRef(false);
   const touchStartXRef = useRef<number | null>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
+  const transitionResetRef = useRef<number | null>(null);
 
   const geometry = getGeometry(isMobile);
   const activeFilm = films[activeIndex];
@@ -239,7 +243,28 @@ export function PortfolioScene() {
     };
   }, [activeIndex, isMobile]);
 
+  useEffect(() => {
+    return () => {
+      if (transitionResetRef.current !== null) {
+        window.clearTimeout(transitionResetRef.current);
+      }
+    };
+  }, []);
+
   const updateIndex = (delta: number) => {
+    const direction = delta > 0 ? 1 : -1;
+    setTransitionDirection(direction);
+    setTransitionKey((current) => current + 1);
+
+    if (transitionResetRef.current !== null) {
+      window.clearTimeout(transitionResetRef.current);
+    }
+
+    transitionResetRef.current = window.setTimeout(() => {
+      setTransitionDirection(0);
+      transitionResetRef.current = null;
+    }, 480);
+
     startTransition(() => {
       setActiveIndex((current) => changeIndex(current, delta));
     });
@@ -327,6 +352,18 @@ export function PortfolioScene() {
     .filter((item) => item.offset > 0)
     .sort((a, b) => Math.abs(a.offset) - Math.abs(b.offset));
 
+  const activeTapeClassName = useMemo(() => {
+    if (transitionDirection < 0) {
+      return `${styles.activeTape} ${styles.activeTapeFromLeft}`;
+    }
+
+    if (transitionDirection > 0) {
+      return `${styles.activeTape} ${styles.activeTapeFromRight}`;
+    }
+
+    return styles.activeTape;
+  }, [transitionDirection]);
+
   const sceneWidth = getSceneWidth(
     geometry.range,
     geometry.silhouetteWidth,
@@ -368,7 +405,7 @@ export function PortfolioScene() {
                 style={{ ...sceneStyle, transform: `translateX(-50%) scale(${shelfScale})` }}
               >
                 <div ref={sceneRef} className={styles.shelfScene}>
-                  {leftFilms.map(({ film, index }, slotIndex) => (
+                  {leftFilms.map(({ film, index, offset }, slotIndex) => (
                     <button
                       key={film.id}
                       type="button"
@@ -382,9 +419,7 @@ export function PortfolioScene() {
                       }
                       aria-label={`Показать фильм ${film.title}`}
                       onClick={() => {
-                        startTransition(() => {
-                          setActiveIndex(index);
-                        });
+                        updateIndex(offset);
                       }}
                     >
                       <SpineFace film={film} index={index} />
@@ -400,7 +435,7 @@ export function PortfolioScene() {
                     }}
                   >
                     <div className={styles.activeSilhouette}>
-                      <div className={styles.activeTape}>
+                      <div key={transitionKey} className={activeTapeClassName}>
                         <div className={styles.caseBody} aria-hidden="true">
                           <Image
                             className={styles.caseTexture}
@@ -425,7 +460,7 @@ export function PortfolioScene() {
                     </div>
                   </button>
 
-                  {rightFilms.map(({ film, index }, slotIndex) => (
+                  {rightFilms.map(({ film, index, offset }, slotIndex) => (
                     <button
                       key={film.id}
                       type="button"
@@ -439,9 +474,7 @@ export function PortfolioScene() {
                       }
                       aria-label={`Показать фильм ${film.title}`}
                       onClick={() => {
-                        startTransition(() => {
-                          setActiveIndex(index);
-                        });
+                        updateIndex(offset);
                       }}
                     >
                       <SpineFace film={film} index={index} />
