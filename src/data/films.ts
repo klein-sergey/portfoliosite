@@ -107,6 +107,16 @@ export const films: Film[] = [
     vimeoUrl: "https://vimeo.com/",
   },
   {
+    id: "nepokorennye",
+    title: "НЕПОКОРЕННЫЕ",
+    productionLine: "СИЯНИЕ / PREMIER",
+    year: "",
+    posterSrc: withBasePath("/posters/nepokorennye.png"),
+    spineLabel: "НЕПОКОРЕННЫЕ",
+    spineSrc: withBasePath("/spines/nepokorennye_koreshok.png"),
+    filmUrl: "https://premier.one/show/nepokorennye-2025",
+  },
+  {
     id: "ulicy-olimpiiskogo-rezerva",
     title: "УЛИЦЫ ОЛИМПИЙСКОГО РЕЗЕРВА",
     productionLine: "SPUTNIK FILMS / ФПРК",
