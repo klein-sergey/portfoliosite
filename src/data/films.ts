@@ -106,4 +106,14 @@ export const films: Film[] = [
     kinopoiskUrl: "https://www.kinopoisk.ru/",
     vimeoUrl: "https://vimeo.com/",
   },
+  {
+    id: "ulicy-olimpiiskogo-rezerva",
+    title: "УЛИЦЫ ОЛИМПИЙСКОГО РЕЗЕРВА",
+    productionLine: "SPUTNIK FILMS / ФПРК",
+    year: "",
+    posterSrc: withBasePath("/posters/uor.png"),
+    spineLabel: "УЛИЦЫ ОЛИМПИЙСКОГО РЕЗЕРВА",
+    spineSrc: withBasePath("/spines/uor_koreshok.png"),
+    filmUrl: "https://www.culture.ru/live/movies/104157/ulicy-olimpiiskogo-rezerva",
+  },
 ];
