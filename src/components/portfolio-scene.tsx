@@ -192,11 +192,13 @@ export function PortfolioScene() {
   const [shelfScale, setShelfScale] = useState(1);
   const [transitionDirection, setTransitionDirection] = useState<-1 | 0 | 1>(0);
   const [transitionKey, setTransitionKey] = useState(0);
+  const [pulsingIndex, setPulsingIndex] = useState<number | null>(null);
   const wheelLockRef = useRef(false);
   const touchStartXRef = useRef<number | null>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const transitionResetRef = useRef<number | null>(null);
+  const pulseResetRef = useRef<number | null>(null);
 
   const geometry = getGeometry(isMobile);
   const activeFilm = films[activeIndex];
@@ -248,11 +250,17 @@ export function PortfolioScene() {
       if (transitionResetRef.current !== null) {
         window.clearTimeout(transitionResetRef.current);
       }
+
+      if (pulseResetRef.current !== null) {
+        window.clearTimeout(pulseResetRef.current);
+      }
     };
   }, []);
 
   const updateIndex = (delta: number) => {
+    const nextIndex = changeIndex(activeIndex, delta);
     const direction = delta > 0 ? 1 : -1;
+    setPulsingIndex(nextIndex);
     setTransitionDirection(direction);
     setTransitionKey((current) => current + 1);
 
@@ -264,6 +272,15 @@ export function PortfolioScene() {
       setTransitionDirection(0);
       transitionResetRef.current = null;
     }, 480);
+
+    if (pulseResetRef.current !== null) {
+      window.clearTimeout(pulseResetRef.current);
+    }
+
+    pulseResetRef.current = window.setTimeout(() => {
+      setPulsingIndex(null);
+      pulseResetRef.current = null;
+    }, 300);
 
     startTransition(() => {
       setActiveIndex((current) => changeIndex(current, delta));
@@ -409,7 +426,7 @@ export function PortfolioScene() {
                     <button
                       key={film.id}
                       type="button"
-                      className={`${styles.spineButton} ${styles.leftSpine}`.trim()}
+                      className={`${styles.spineButton} ${styles.leftSpine} ${pulsingIndex === index ? styles.spinePulse : ""}`.trim()}
                       style={
                         {
                           ["--slot-index" as string]: slotIndex,
@@ -464,7 +481,7 @@ export function PortfolioScene() {
                     <button
                       key={film.id}
                       type="button"
-                      className={`${styles.spineButton} ${styles.rightSpine}`.trim()}
+                      className={`${styles.spineButton} ${styles.rightSpine} ${pulsingIndex === index ? styles.spinePulse : ""}`.trim()}
                       style={
                         {
                           ["--slot-index" as string]: slotIndex,
