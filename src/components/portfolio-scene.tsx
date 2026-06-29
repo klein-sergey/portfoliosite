@@ -169,7 +169,7 @@ function FilmMeta({
         >
           <span aria-hidden="true">‹</span>
         </button>
-        <h1 className={styles.title}>{film.title}</h1>
+        <h1 className={styles.title}>{film.title.toUpperCase()}</h1>
         <button
           type="button"
           className={styles.titleArrow}

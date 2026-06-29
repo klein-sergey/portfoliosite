@@ -2,13 +2,13 @@ import type { Film } from "@/types/film";
 import { withBasePath } from "@/lib/assets";
 
 export const contactLinks = {
-  email: "mailto:hello@sergeyklein.com",
-  telegram: "https://t.me/sergeyklein",
+  email: "mailto:hello@kleinsergey.com",
+  telegram: "https://t.me/klein_sergey",
 };
 
 export const platformLinks = {
-  kinopoisk: "https://www.kinopoisk.ru/",
-  vimeo: "https://vimeo.com/",
+  kinopoisk: "https://www.kinopoisk.ru/name/6928395",
+  vimeo: "https://vimeo.com/kleinsergey",
 };
 
 export const films: Film[] = [
@@ -20,9 +20,9 @@ export const films: Film[] = [
     posterSrc: withBasePath("/posters/cska_v2.png"),
     spineLabel: "Мама, мы – ЦСКА!",
     spineSrc: withBasePath("/spines/cska_koreshok.png"),
-    filmUrl: "https://okko.tv/",
-    kinopoiskUrl: "https://www.kinopoisk.ru/",
-    vimeoUrl: "https://okko.tv/",
+    filmUrl: "https://okko.tv/serial/mama-my-cska",
+    kinopoiskUrl: "https://www.kinopoisk.ru/name/6928395",
+    vimeoUrl: "https://vimeo.com/kleinsergey",
   },
   {
     id: "white-noise-river",

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const uiFont = Barlow_Condensed({
+const uiFont = JetBrains_Mono({
   variable: "--font-ui",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {

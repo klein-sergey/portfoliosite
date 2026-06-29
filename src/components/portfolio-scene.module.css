@@ -370,17 +370,6 @@
     padding: 1rem 1rem 1.25rem;
   }
 
-  .header {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 0.5rem;
-  }
-
-  .navGroup,
-  .navGroup[data-align="right"] {
-    justify-content: center;
-  }
-
   .shelfWrap {
     min-height: calc(100dvh - 10rem);
   }
@@ -397,10 +386,28 @@
     border: 0;
   }
 
+  .header {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
   .brandName,
   .navLink,
   .navLinkDisabled {
-    font-size: 0.66rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+  }
+
+  .navGroup {
+    gap: 0.45rem;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .navGroup[data-align="right"] {
+    justify-content: flex-end;
   }
 
   .shelfWrap {
