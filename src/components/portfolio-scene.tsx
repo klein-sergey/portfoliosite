@@ -125,7 +125,7 @@ function Header() {
       </nav>
 
       <div className={styles.brand}>
-        <span className={styles.brandName}>SERGEY KLEIN</span>
+        <span className={styles.brandName}>СЕРГЕЙ КЛЕЙН</span>
       </div>
 
       <nav className={styles.navGroup} data-align="right" aria-label="Площадки фильма">

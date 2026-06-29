@@ -37,6 +37,11 @@
   flex-wrap: wrap;
 }
 
+.navGroup:first-child,
+.navGroup[data-align="right"] {
+  gap: 2rem;
+}
+
 .navGroup[data-align="right"] {
   justify-content: flex-end;
 }
@@ -580,6 +585,11 @@
 
   .navGroup[data-align="right"] {
     justify-content: flex-end;
+  }
+
+  .navGroup:first-child,
+  .navGroup[data-align="right"] {
+    gap: 0.9rem;
   }
 
   .shelfWrap {
