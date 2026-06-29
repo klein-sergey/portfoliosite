@@ -107,6 +107,16 @@ export const films: Film[] = [
     vimeoUrl: "https://vimeo.com/",
   },
   {
+    id: "vladimir-rezitskiy-dzhaz-arhangel",
+    title: "ВЛАДИМИР РЕЗИЦКИЙ. ДЖАЗ АРХАНГЕЛ",
+    productionLine: "JENEVA / VK",
+    year: "",
+    posterSrc: withBasePath("/posters/jazz.png"),
+    spineLabel: "ВЛАДИМИР РЕЗИЦКИЙ. ДЖАЗ АРХАНГЕЛ",
+    spineSrc: withBasePath("/spines/jazz_koreshok.png"),
+    filmUrl: "https://vk.com/wall-219905071_775",
+  },
+  {
     id: "nepokorennye",
     title: "НЕПОКОРЕННЫЕ",
     productionLine: "СИЯНИЕ / PREMIER",
