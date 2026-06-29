@@ -14,6 +14,7 @@ import {
 } from "react";
 
 import { contactLinks, films } from "@/data/films";
+import { withBasePath } from "@/lib/assets";
 import type { Film } from "@/types/film";
 
 import styles from "./portfolio-scene.module.css";
@@ -389,7 +390,7 @@ export function PortfolioScene() {
                         <div className={styles.caseBody} aria-hidden="true">
                           <Image
                             className={styles.caseTexture}
-                            src="/textures/vhs.png"
+                            src={withBasePath("/textures/vhs.png")}
                             alt=""
                             fill
                             priority
