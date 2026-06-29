@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Russo_One } from "next/font/google";
 import "./globals.css";
 
-const uiFont = JetBrains_Mono({
+const uiFont = Russo_One({
   variable: "--font-ui",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
