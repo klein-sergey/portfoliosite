@@ -13,7 +13,7 @@ import {
   type WheelEvent,
 } from "react";
 
-import { contactLinks, films } from "@/data/films";
+import { contactLinks, films, platformLinks } from "@/data/films";
 import { withBasePath } from "@/lib/assets";
 import type { Film } from "@/types/film";
 
@@ -106,11 +106,7 @@ function getSceneWidth(range: number, silhouetteWidth: number, spineWidth: numbe
   return silhouetteWidth + 2 * (gap + range * spineWidth + (range - 1) * gap);
 }
 
-type HeaderProps = {
-  activeFilm: Film;
-};
-
-function Header({ activeFilm }: HeaderProps) {
+function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.navGroup} aria-label="Контакты">
@@ -132,30 +128,22 @@ function Header({ activeFilm }: HeaderProps) {
       </div>
 
       <nav className={styles.navGroup} data-align="right" aria-label="Площадки фильма">
-        {activeFilm.kinopoiskUrl ? (
-          <a
-            className={styles.navLink}
-            href={activeFilm.kinopoiskUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            КИНОПОИСК
-          </a>
-        ) : (
-          <span className={styles.navLinkDisabled}>КИНОПОИСК</span>
-        )}
-        {activeFilm.vimeoUrl ? (
-          <a
-            className={styles.navLink}
-            href={activeFilm.vimeoUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            ВИМЕО
-          </a>
-        ) : (
-          <span className={styles.navLinkDisabled}>ВИМЕО</span>
-        )}
+        <a
+          className={styles.navLink}
+          href={platformLinks.kinopoisk}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          КИНОПОИСК
+        </a>
+        <a
+          className={styles.navLink}
+          href={platformLinks.vimeo}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          ВИМЕО
+        </a>
       </nav>
     </header>
   );
@@ -336,7 +324,7 @@ export function PortfolioScene() {
     <main className={styles.page}>
       <section className={styles.stage}>
         <div className={styles.frame}>
-          <Header activeFilm={activeFilm} />
+          <Header />
 
           <div className={styles.shelfWrap}>
             <div

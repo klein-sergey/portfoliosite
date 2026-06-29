@@ -6,14 +6,19 @@ export const contactLinks = {
   telegram: "https://t.me/sergeyklein",
 };
 
+export const platformLinks = {
+  kinopoisk: "https://www.kinopoisk.ru/",
+  vimeo: "https://vimeo.com/",
+};
+
 export const films: Film[] = [
   {
     id: "mama-my-cska",
-    title: "МАМА, МЫ ЦСКА!",
-    productionLine: "Okko x ЦСКА",
+    title: "Мама, мы – ЦСКА!",
+    productionLine: "HUMAN / OKKO",
     year: "",
     posterSrc: withBasePath("/posters/cska_v2.png"),
-    spineLabel: "МАМА, МЫ ЦСКА!",
+    spineLabel: "Мама, мы – ЦСКА!",
     spineSrc: withBasePath("/spines/cska_koreshok.png"),
     filmUrl: "https://okko.tv/",
     kinopoiskUrl: "https://www.kinopoisk.ru/",
