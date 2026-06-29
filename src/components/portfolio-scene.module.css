@@ -73,7 +73,7 @@
   font-size: 0.94rem;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: #f6ece0;
+  color: var(--text-accent);
 }
 
 .shelfWrap {
@@ -131,6 +131,11 @@
 .spineButton {
   width: var(--spine-width);
   height: var(--spine-height);
+  transition: transform 240ms ease;
+}
+
+.spineButton:hover {
+  transform: translateY(-0.28rem);
 }
 
 .leftSpine {
@@ -291,6 +296,13 @@
   text-align: center;
 }
 
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
 .title {
   font-family: var(--font-ui);
   font-size: clamp(2rem, 2.9vw, 3rem);
@@ -298,6 +310,36 @@
   line-height: 0.96;
   letter-spacing: 0.08em;
   color: #fbf3e7;
+}
+
+.titleArrow {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--text-accent);
+  font-family: var(--font-ui);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.titleArrow:hover,
+.titleArrow:focus-visible {
+  color: #fbf3e7;
+  transform: translateY(-0.08rem);
+}
+
+.titleArrow:focus-visible {
+  outline: 1px solid rgba(198, 31, 38, 0.75);
+  outline-offset: 0.2rem;
 }
 
 .production {
@@ -390,6 +432,16 @@
     font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
 
+  .titleRow {
+    gap: 0.35rem;
+  }
+
+  .titleArrow {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 1.55rem;
+  }
+
   .production {
     font-size: 0.68rem;
   }
@@ -400,13 +452,24 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .spineButton,
   .activeTape,
   .navLink,
-  .navLinkDisabled {
+  .navLinkDisabled,
+  .titleArrow {
     transition: none;
+  }
+
+  .spineButton:hover {
+    transform: none;
   }
 
   .activeTape:hover {
     transform: translateX(calc(-50% + var(--visual-center-offset))) rotate(-8deg);
+  }
+
+  .titleArrow:hover,
+  .titleArrow:focus-visible {
+    transform: none;
   }
 }

@@ -149,10 +149,36 @@ function Header() {
   );
 }
 
-function FilmMeta({ film }: { film: Film }) {
+function FilmMeta({
+  film,
+  onPrevious,
+  onNext,
+}: {
+  film: Film;
+  onPrevious: () => void;
+  onNext: () => void;
+}) {
   return (
     <div className={styles.metaBlock}>
-      <h1 className={styles.title}>{film.title}</h1>
+      <div className={styles.titleRow}>
+        <button
+          type="button"
+          className={styles.titleArrow}
+          aria-label="Предыдущая кассета"
+          onClick={onPrevious}
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
+        <h1 className={styles.title}>{film.title}</h1>
+        <button
+          type="button"
+          className={styles.titleArrow}
+          aria-label="Следующая кассета"
+          onClick={onNext}
+        >
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
       <p className={styles.production}>{film.productionLine}</p>
       <p className={styles.year}>{film.year}</p>
     </div>
@@ -426,7 +452,11 @@ export function PortfolioScene() {
             </div>
 
             <footer className={styles.footerRow}>
-              <FilmMeta film={activeFilm} />
+              <FilmMeta
+                film={activeFilm}
+                onPrevious={() => updateIndex(-1)}
+                onNext={() => updateIndex(1)}
+              />
             </footer>
           </div>
         </div>
