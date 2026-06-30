@@ -35,6 +35,16 @@ export const films: Film[] = [
     filmUrl: "https://wink.ru/movies/tam-gde-nash-dom-severnaya-osetiya-year-2024",
   },
   {
+    id: "tam-gde-nash-dom-hakasiya",
+    title: "ТАМ, ГДЕ НАШ ДОМ. ХАКАСИЯ",
+    productionLine: "SPUTNIK FILMS / КИНОПОИСК",
+    year: "",
+    posterSrc: withBasePath("/posters/hakasia.png"),
+    spineLabel: "ТАМ, ГДЕ НАШ ДОМ. ХАКАСИЯ",
+    spineSrc: withBasePath("/spines/hakasia_koreshok.png"),
+    filmUrl: "https://www.kinopoisk.ru/film/6013486",
+  },
+  {
     id: "white-noise-river",
     title: "White Noise River",
     productionLine: "Sever Film / Premier",
