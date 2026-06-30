@@ -55,6 +55,16 @@ export const films: Film[] = [
     filmUrl: "https://www.kinopoisk.ru/film/4934473/?socialAlias=MjE3NzE2NA%3D%3D",
   },
   {
+    id: "zaimemsya-naukoi-bioinzheneriya",
+    title: "ЗАЙМЕМСЯ НАУКОЙ. БИОИНЖЕНЕРИЯ",
+    productionLine: "MOVIE START / VK",
+    year: "",
+    posterSrc: withBasePath("/posters/nauka.png"),
+    spineLabel: "ЗАЙМЕМСЯ НАУКОЙ. БИОИНЖЕНЕРИЯ",
+    spineSrc: withBasePath("/spines/nauka_koreshok.png"),
+    filmUrl: "https://rutube.ru/video/500fdf9199374f72fac73a01b4e2b30c/",
+  },
+  {
     id: "white-noise-river",
     title: "White Noise River",
     productionLine: "Sever Film / Premier",
