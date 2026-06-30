@@ -25,6 +25,16 @@ export const films: Film[] = [
     vimeoUrl: "https://vimeo.com/kleinsergey",
   },
   {
+    id: "tam-gde-nash-dom-severnaya-osetiya",
+    title: "ТАМ, ГДЕ НАШ ДОМ. СЕВЕРНАЯ ОСЕТИЯ",
+    productionLine: "SPUTNIK FILMS / WINK",
+    year: "2024",
+    posterSrc: withBasePath("/posters/osetia.png"),
+    spineLabel: "ТАМ, ГДЕ НАШ ДОМ. СЕВЕРНАЯ ОСЕТИЯ",
+    spineSrc: withBasePath("/spines/osetia_koreshok.png"),
+    filmUrl: "https://wink.ru/movies/tam-gde-nash-dom-severnaya-osetiya-year-2024",
+  },
+  {
     id: "white-noise-river",
     title: "White Noise River",
     productionLine: "Sever Film / Premier",
