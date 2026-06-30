@@ -70,13 +70,24 @@ function getSpineStyle(index: number) {
 
   return {
     ["--spine-gradient" as string]: palettes[index % palettes.length],
+    ["--spine-border" as string]: "#000",
+    ["--spine-highlight" as string]: "rgba(255, 248, 237, 0.35)",
+    ["--spine-inner-shadow" as string]: "rgba(255, 255, 255, 0.04)",
   };
 }
 
 function SpineFace({ film, index }: { film: Film; index: number }) {
   if (film.spineSrc) {
     return (
-      <div className={styles.spineOnly}>
+      <div
+        className={styles.spineOnly}
+        style={{
+          ["--spine-gradient" as string]: "transparent",
+          ["--spine-border" as string]: "transparent",
+          ["--spine-highlight" as string]: "transparent",
+          ["--spine-inner-shadow" as string]: "transparent",
+        }}
+      >
         <Image
           className={styles.spineImage}
           src={film.spineSrc}
