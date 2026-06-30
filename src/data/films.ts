@@ -45,6 +45,16 @@ export const films: Film[] = [
     filmUrl: "https://www.kinopoisk.ru/film/6013486",
   },
   {
+    id: "tam-gde-nash-dom-krasnoyarskii-krai",
+    title: "ТАМ ГДЕ НАШ ДОМ. КРАСНОЯРСКИЙ КРАЙ",
+    productionLine: "SAYAN FILM / КИНОПОИСК",
+    year: "",
+    posterSrc: withBasePath("/posters/krasnoyarsk.png"),
+    spineLabel: "ТАМ ГДЕ НАШ ДОМ. КРАСНОЯРСКИЙ КРАЙ",
+    spineSrc: withBasePath("/spines/krasnoyarsk_koreshok.png"),
+    filmUrl: "https://www.kinopoisk.ru/film/4934473/?socialAlias=MjE3NzE2NA%3D%3D",
+  },
+  {
     id: "white-noise-river",
     title: "White Noise River",
     productionLine: "Sever Film / Premier",
