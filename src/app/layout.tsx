@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Russo_One } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,13 @@ const uiFont = Russo_One({
 export const metadata: Metadata = {
   title: "Sergey Klein",
   description: "Портфолио документальных работ Sergey Klein в VHS-интерфейсе.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({

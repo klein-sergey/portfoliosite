@@ -33,7 +33,7 @@ const DESKTOP_GEOMETRY = {
   activeWidth: 12.1,
   activeHeight: 17.2,
   sceneHeight: 19.2,
-  sceneBottom: 8.4,
+  sceneBottom: 2.2,
 };
 
 const MOBILE_GEOMETRY = {
@@ -45,7 +45,7 @@ const MOBILE_GEOMETRY = {
   activeWidth: 10.8,
   activeHeight: 15.4,
   sceneHeight: 16.6,
-  sceneBottom: 8.7,
+  sceneBottom: 1.4,
 };
 
 function normalizeIndex(index: number, length: number) {
@@ -121,41 +121,39 @@ function getSceneWidth(range: number, silhouetteWidth: number, spineWidth: numbe
 function Header() {
   return (
     <header className={styles.header}>
-      <nav className={styles.navGroup} aria-label="Контакты">
-        <a className={styles.navLink} href={contactLinks.email}>
-          ПОЧТА
-        </a>
-        <a
-          className={styles.navLink}
-          href={contactLinks.telegram}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          ТЕЛЕГРАМ
-        </a>
-      </nav>
-
-      <div className={styles.brand}>
+      <nav className={styles.navGroup} aria-label="Навигация">
+        <div className={styles.navSide}>
+          <a className={styles.navLink} href={contactLinks.email}>
+            ПОЧТА
+          </a>
+          <a
+            className={styles.navLink}
+            href={contactLinks.telegram}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            ТЕЛЕГРАМ
+          </a>
+        </div>
         <span className={styles.brandName}>СЕРГЕЙ КЛЕЙН</span>
-      </div>
-
-      <nav className={styles.navGroup} data-align="right" aria-label="Площадки фильма">
-        <a
-          className={styles.navLink}
-          href={platformLinks.kinopoisk}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          КИНОПОИСК
-        </a>
-        <a
-          className={styles.navLink}
-          href={platformLinks.vimeo}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          ВИМЕО
-        </a>
+        <div className={`${styles.navSide} ${styles.navSideRight}`}>
+          <a
+            className={styles.navLink}
+            href={platformLinks.kinopoisk}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            КИНОПОИСК
+          </a>
+          <a
+            className={styles.navLink}
+            href={platformLinks.vimeo}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            ВИМЕО
+          </a>
+        </div>
       </nav>
     </header>
   );
@@ -229,6 +227,21 @@ export function PortfolioScene() {
     };
   }, []);
 
+  useEffect(() => {
+    const syncViewportHeight = () => {
+      document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+    };
+
+    syncViewportHeight();
+    window.addEventListener("resize", syncViewportHeight);
+    window.addEventListener("orientationchange", syncViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", syncViewportHeight);
+      window.removeEventListener("orientationchange", syncViewportHeight);
+    };
+  }, []);
+
   useLayoutEffect(() => {
     const viewport = viewportRef.current;
     const scene = sceneRef.current;
@@ -240,7 +253,9 @@ export function PortfolioScene() {
     const updateScale = () => {
       const widthScale = (viewport.clientWidth - 24) / scene.offsetWidth;
       const heightScale = (viewport.clientHeight - 16) / scene.offsetHeight;
-      setShelfScale(Math.min(1, widthScale, heightScale));
+      const aspectRatio = viewport.clientHeight / Math.max(viewport.clientWidth, 1);
+      const mobileBoost = isMobile ? Math.min(1.12, 1 + Math.max(0, aspectRatio - 2) * 0.12) : 1;
+      setShelfScale(Math.min(1, widthScale * mobileBoost, heightScale));
     };
 
     updateScale();
@@ -467,7 +482,7 @@ export function PortfolioScene() {
                         <div className={styles.caseBody} aria-hidden="true">
                           <Image
                             className={styles.caseTexture}
-                            src={withBasePath("/textures/vhs.png")}
+                            src={withBasePath("/textures/vhs.webp")}
                             alt=""
                             fill
                             priority
